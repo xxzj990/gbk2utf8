@@ -106,7 +106,7 @@ List<int> gbk2unicode(List<int> gbk_buf) {
     }
   }
 
-  uni_ptr.length = uni_num;
+  //uni_ptr.length = uni_num;
 
   return uni_ptr;
 }
@@ -163,6 +163,6 @@ List<int> unicode2utf8(List<int> wordArray) {
     }
   }
 
-  list.length = pos;
+  //list.length = pos;
   return list;
 }
