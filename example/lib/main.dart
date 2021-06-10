@@ -1,8 +1,7 @@
-import 'dart:async';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'package:gbk2utf8/gbk2utf8.dart';
+
 import 'package:flutter/material.dart';
+import 'package:gbk2utf8/gbk2utf8.dart';
+import 'package:http/http.dart' as http;
 
 void main() => runApp(new MyApp());
 
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -33,8 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void download() async {
     try {
-      http.Response response =
-          await http.get("http://www.ysts8.com/index_hot.html");
+      http.Response response = await http.get(Uri.parse("http://www.ysts8.com/index_hot.html"));
       String data = gbk.decode(response.bodyBytes);
       setState(() {
         _text = data;
